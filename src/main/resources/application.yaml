@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /api
+
+credit:
+  queue:
+    name: CreditMessagesRequest
+
+logging:
+  level:
+    com.credit: DEBUG
+
+amazon:
+    region: us-east-1
