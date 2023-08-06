@@ -1,0 +1,26 @@
+
+Used guide: 
+
+1.
+eval $(minikube docker-env)
+docker rmi credit-app:latest
+docker build --no-cache -t credit-app .
+
+2.
+install minikube
+#minikube start
+
+3.
+create k8s deployment resources
+
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+envsubst < credit.yaml | kubectl apply -f -
+
+kubectl get pods --watch
+minikube service credit --url
+
+kubectl logs credit...
+
+kubectl delete -f credit.yaml
+minikube stop

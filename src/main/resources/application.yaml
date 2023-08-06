@@ -1,6 +1,8 @@
 server:
-  servlet:
-    context-path: /api
+#  servlet:
+#    context-path: /api
+  port: 8080
+
 
 credit:
   queue:
@@ -11,4 +13,20 @@ logging:
     com.credit: DEBUG
 
 amazon:
+#  dynamodb:
+#    endpoint: aws:dynamodb:us-east-1:366564696210:table/credits
+  aws:
+    accesskey: ${AWS_ACCESS_KEY_ID}
+    secretkey: ${AWS_SECRET_ACCESS_KEY}
     region: us-east-1
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
